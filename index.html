@@ -45,7 +45,7 @@
 </head>
 <body>
   <div class="card">
-    <img src="https://via.placeholder.com/320x180.png?text=Blurred+Trade+Idea" alt="Blurred Idea" />
+    <img id="ideaImage" src="blur.png" alt="Trade Idea" />
     <h2>Premium Trade Idea</h2>
     <p>Unlock this chart using Telegram Stars to see the full setup.</p>
     <button class="btn" onclick="unlockWithStars()">Unlock with Stars ⭐</button>
@@ -54,6 +54,7 @@
   <script>
     function unlockWithStars() {
       alert("✅ Payment successful (simulated). You now have access to the full trade idea.");
+      document.getElementById("ideaImage").src = "idea.png"; // full image appears
     }
   </script>
 </body>
