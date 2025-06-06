@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unlock Trade Idea</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 360px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    .btn {
+      background: #22d3ee;
+      color: black;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #06b6d4;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://via.placeholder.com/320x180.png?text=Blurred+Trade+Idea" alt="Blurred Idea" />
+    <h2>Premium Trade Idea</h2>
+    <p>Unlock this chart using Telegram Stars to see the full setup.</p>
+    <button class="btn" onclick="unlockWithStars()">Unlock with Stars ⭐</button>
+  </div>
+
+  <script>
+    function unlockWithStars() {
+      Telegram.WebApp.openInvoice("invoice-link-goes-here", (status) => {
+        if (status === "paid") {
+          alert("Payment successful! You will now receive the full trade idea.");
+        } else {
+          alert("Payment failed or cancelled.");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
